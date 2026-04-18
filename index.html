@@ -352,6 +352,23 @@
 </style>
 </head>
 <body>
+<script>
+/* ── Verrouillage domaine — SDIS 67 ── */
+(function(){
+  var allowed = ['guidomuller.github.io'];
+  var host = window.location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1' || host === '') return;
+  if (allowed.indexOf(host) === -1) {
+    document.documentElement.innerHTML =
+      '<div style="font-family:sans-serif;text-align:center;padding:60px 20px;background:#0f172a;min-height:100vh;color:#fff;">' +
+      '<div style="font-size:64px;margin-bottom:24px;">⛔</div>' +
+      '<h1 style="color:#c0212c;font-size:24px;margin-bottom:12px;">Accès non autorisé</h1>' +
+      '<p style="color:#9ca3af;font-size:14px;">Ce document est réservé au personnel du SDIS 67.</p>' +
+      '<p style="color:#6b7280;font-size:12px;margin-top:16px;">© Guido Muller — Usage interne SDIS 67</p>' +
+      '</div>';
+  }
+})();
+</script>
 
 <!-- ══════════════════════════════════════════════════════
      PROTECTION LIF — SDIS 67 — © Guido Muller 2024
